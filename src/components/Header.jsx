@@ -8,7 +8,7 @@ export default function Header() {
             max-w-xl w-[97%]
             p-4
             flex justify-between items-center
-            bg-slate-900
+            bg-slate-800
             rounded-md
             text-white text-xl font-normal tracking-wide'
         >
