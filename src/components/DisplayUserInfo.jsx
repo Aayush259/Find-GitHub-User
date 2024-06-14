@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import GitHubUserInfo from './GithubUserInfo';
 import Loader from './Loader.jsx';
 import UserNotFound from './UserNotFound.jsx';
+import GoBackButton from './GoBackButton.jsx';
 
 export default function DisplayUserInfo() {
 
@@ -26,7 +27,7 @@ export default function DisplayUserInfo() {
         .then(data => setData(data))
         .catch(err => console.log('Error:', err));
 
-    }, [username])
+    }, [username]);
 
     useEffect(() => {
 
@@ -38,10 +39,11 @@ export default function DisplayUserInfo() {
                 setReturnValue(<GitHubUserInfo Data={Data} />);
             }
         }
-    }, [Data])
+    }, [Data]);
 
     return (
         <>
+        <GoBackButton backURL={'/Find-GitHub-User/'} />
         {returnValue}
         </>
     );

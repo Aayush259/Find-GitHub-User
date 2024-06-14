@@ -13,10 +13,10 @@ export default function GitHubUserInfo({ Data }) {
             mx-auto max-w-4xl w-[95%] p-4 mb-8
             flex flex-col 
             md:flex-row md:items-center md:justify-between md:gap-5
-            tracking-wide rounded-2xl'
+            tracking-wide rounded-b-2xl'
         >
             <div className='
-                mt-8 mx-auto
+                mx-auto
                 min-w-[40%]
                 md:w-fit'
             >
