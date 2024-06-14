@@ -41,7 +41,7 @@ export default function Search() {
                     id='searchInput' 
                     ref={inputRef} 
                     className='
-                        bg-white 
+                        bg-white text-slate-950
                         w-4/5 h-5 p-5
                         rounded-l-lg 
                         focus:outline-sky-400 focus:outline-4 focus:outline focus:z-10'

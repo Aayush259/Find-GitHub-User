@@ -12,13 +12,13 @@ export default function GitHubUserInfo({ Data }) {
             bg-slate-800 
             mx-auto max-w-4xl w-[95%] p-4 mb-8
             flex flex-col 
-            md:flex-row md:items-center md:justify-center md:gap-5
+            md:flex-row md:items-center md:justify-between md:gap-5
             tracking-wide rounded-2xl'
         >
             <div className='
                 mt-8 mx-auto
-                w-full
-                md:w-9/12'
+                min-w-[40%]
+                md:w-fit'
             >
                 <img 
                     src={Data['avatar_url']} 
@@ -38,11 +38,12 @@ export default function GitHubUserInfo({ Data }) {
 
             </div>
 
-            <div className='mt-4 mx-auto'>
+            <div className='mt-4 mx-auto w-full min-w-[50%]'>
                 <p>{Data['bio'] ? Data['bio'] : 'Bio not available' }</p>
 
                 <div className='
                     mt-5 py-3
+                    px-2
                     flex flex-row justify-evenly 
                     w-full rounded-md
                     bg-slate-900'>
