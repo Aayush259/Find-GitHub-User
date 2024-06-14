@@ -33,9 +33,16 @@ export default function GitHubUserInfo({ Data }) {
 
                 <div className='text-center mt-4'>
                     <p className='text-2xl'>{Data["name"]}</p>
-                    <p className='mt-2 text-lg text-sky-300 font-semibold'>{Data['login']}</p>
+                    <p className='mt-2 text-lg text-sky-300 font-semibold'>
+                        <a 
+                            href={`https://github.com/${Data['login']}`} 
+                            target='_blank'
+                            className='hover:opacity-80 hover:underline hover:underline-offset-4'
+                        >
+                            {Data['login']}
+                        </a>
+                    </p>
                 </div>
-
             </div>
 
             <div className='mt-4 mx-auto w-full min-w-[50%]'>
@@ -85,11 +92,11 @@ export default function GitHubUserInfo({ Data }) {
                     </div>
 
                     <div className='flex items-center gap-3'>
-                        <img src={linkIcon} alt='Blog' width={20} /> {Data['blog'] ? <a href={Data['blog']} target='_blank'>Blog</a> : <span className='opacity-80'>Not available</span>}
+                        <img src={linkIcon} alt='Blog' width={20} /> {Data['blog'] ? <a href={Data['blog']} target='_blank' className='hover:opacity-80 hover:underline hover:underline-offset-4'>Blog</a> : <span className='opacity-80'>Not available</span>}
                     </div>
 
                     <div className='flex items-center gap-3'>
-                        <img src={xIcon} alt='Twitter/X' width={20} /> {Data['twitter_username'] ? Data['twitter_username'] : <span className='opacity-80'>Not available</span>}
+                        <img src={xIcon} alt='Twitter/X' width={20} /> {Data['twitter_username'] ? <a href={`https://x.com/${Data['twitter_username']}`} target='_blank' className='hover:opacity-80 hover:underline hover:underline-offset-4'>{Data['twitter_username']}</a> : <span className='opacity-80'>Not available</span>}
                     </div>
 
                     <div className='flex items-center gap-3'>
