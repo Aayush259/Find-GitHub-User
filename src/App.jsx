@@ -6,7 +6,7 @@ export default function App() {
 
   return (
     <>
-    <div className='bg-black min-h-screen overflow-x-hidden flex flex-col'>
+    <div className='bg-black text-white min-h-screen overflow-x-hidden flex flex-col justify-center items-center'>
       <Header />
       <Outlet />
     </div>

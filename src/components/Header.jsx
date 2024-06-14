@@ -4,16 +4,17 @@ export default function Header() {
 
     return (
         <div className='
-            my-4 mt-10 mx-auto
-            max-w-xl w-[97%]
+            my-4 mt-0 mx-auto
+            max-w-4xl w-[95%]
             p-4
             flex justify-between items-center
             bg-slate-800
-            rounded-md
-            text-white text-xl font-normal tracking-wide'
+            rounded-b-md
+            md:rounded-md md:mt-10
+            text-xl font-normal tracking-wide'
         >
             <h1>
-                Search GitHub User
+                DevFinder
             </h1>
 
             <a className='cursor-pointer' href='https://github.com/Aayush259' target='_blank'>
