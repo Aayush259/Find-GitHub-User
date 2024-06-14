@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import GitHubUserInfo from './GithubUserInfo';
 import Loader from './Loader.jsx';
+import UserNotFound from './UserNotFound.jsx';
 
 export default function DisplayUserInfo() {
 
@@ -10,6 +11,9 @@ export default function DisplayUserInfo() {
 
     // Data state.
     const [Data, setData] = useState(null);
+
+    // State for return value.
+    const [returnValue, setReturnValue] = useState(<Loader />);
 
     useEffect(() => {
 
@@ -24,9 +28,21 @@ export default function DisplayUserInfo() {
 
     }, [username])
 
+    useEffect(() => {
+
+        // If Data value is not null, then display Data.
+        if (Data) {
+            if (Data['message']) {
+                setReturnValue(<UserNotFound />);
+            } else {
+                setReturnValue(<GitHubUserInfo Data={Data} />);
+            }
+        }
+    }, [Data])
+
     return (
         <>
-        {Data ? <GitHubUserInfo Data={Data} /> : <Loader />}
+        {returnValue}
         </>
     );
 };
