@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import GitHubUserInfo from './GithubUserInfo';
+import Loader from './Loader.jsx';
 
 export default function DisplayUserInfo() {
 
@@ -25,7 +26,7 @@ export default function DisplayUserInfo() {
 
     return (
         <>
-        {Data ? <GitHubUserInfo Data={Data} /> : <p className='text-white'>Loading...</p>}
+        {Data ? <GitHubUserInfo Data={Data} /> : <Loader />}
         </>
     );
 };
