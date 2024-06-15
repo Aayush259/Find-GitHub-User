@@ -4,6 +4,7 @@ import GitHubUserInfo from './GithubUserInfo';
 import Loader from './Loader.jsx';
 import UserNotFound from './UserNotFound.jsx';
 import GoBackButton from './GoBackButton.jsx';
+import Error from './Error.jsx';
 
 export default function DisplayUserInfo() {
 
@@ -32,7 +33,10 @@ export default function DisplayUserInfo() {
         fetch(url, { signal: controller.signal })
         .then(response => response.json())
         .then(data => setData(data))
-        .catch(err => console.log('Error:', err));
+        .catch(err => {
+            console.log('Error:', err);
+            setData('error')
+        });
 
         // Cleanup and abort fetch if component unmounts.
         return () => {
@@ -47,7 +51,9 @@ export default function DisplayUserInfo() {
 
         // If Data value is not null, then display Data.
         if (Data) {
-            if (Data['message']) {
+            if (Data === 'error') {
+                setReturnValue(<Error />)
+            } else if (Data['message']) {
                 setReturnValue(<UserNotFound />);
             } else {
                 setReturnValue(<GitHubUserInfo Data={Data} />);
