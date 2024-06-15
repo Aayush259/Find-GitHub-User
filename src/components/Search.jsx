@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import searchIcon from '../images/search-light.svg';
+import Advice from './Advice';
 
 export default function Search() {
 
@@ -18,9 +19,11 @@ export default function Search() {
     return (
         <div 
             className='
-                flex flex-col 
-                max-w-xl w-[97%] min-h-[80vh]
-                mx-auto mt-8'
+                flex flex-col mb-4 p-1
+                max-w-4xl w-[95%] min-h-[80vh]
+                mx-auto mt-8
+                bg-slate-800
+                rounded-2xl'
         >
             <label 
                 htmlFor='searchInput' 
@@ -58,6 +61,7 @@ export default function Search() {
                     <img className='h-5' src={searchIcon} alt='Search' />
                 </button>
             </div>
+            <Advice />
         </div>
     );
 };
