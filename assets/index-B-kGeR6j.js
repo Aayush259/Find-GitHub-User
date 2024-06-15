@@ -86,7 +86,7 @@ Error generating stack: `+o.message+`
                     text-lg tracking-wide 
                     m-4 ml-6`,children:"Enter GitHub username:"}),P.jsxs("div",{className:`
                     w-full 
-                    flex items-center justify-center`,children:[P.jsx("input",{type:"text",id:"searchInput",ref:t,"aria-label":"Enter GitHub username",className:`
+                    flex items-center justify-center`,children:[P.jsx("input",{type:"text",id:"searchInput",ref:t,"aria-label":"Enter GitHub username",onKeyDown:r=>{r.key==="Enter"&&n()},className:`
                         bg-white text-slate-950
                         w-4/5 h-5 p-5
                         rounded-l-lg 
