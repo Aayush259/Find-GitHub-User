@@ -20,7 +20,8 @@ export default function DisplayUserInfo() {
     // State for return value.
     const [returnValue, setReturnValue] = useState(<Loader />);
 
-    useEffect(() => {
+    // This function fetches the github user data and update the Data state.
+    const fetchGithubUserData = () => {
 
         // Initialize abort controller.
         const controller = new AbortController();
@@ -35,6 +36,7 @@ export default function DisplayUserInfo() {
         .then(data => setData(data))
         .catch(err => {
             console.log('Error:', err);
+            if (err.name === 'AbortError') return;  // Ignore abort errors.
             setData('error')
         });
 
@@ -44,7 +46,10 @@ export default function DisplayUserInfo() {
                 controllerRef.current.abort();
             }
         };
+    };
 
+    useEffect(() => {
+        return fetchGithubUserData();
     }, [username]);
 
     useEffect(() => {
@@ -54,7 +59,7 @@ export default function DisplayUserInfo() {
             if (Data['message']) {
                 setReturnValue(<UserNotFound />);
             } else if (Data === 'error') {
-                setReturnValue(<Error />)
+                setReturnValue(<Error retry={fetchGithubUserData} />)
             } else {
                 setReturnValue(<GitHubUserInfo Data={Data} />);
             }

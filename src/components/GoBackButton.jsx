@@ -1,6 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import arrowLeft from '../images/arrow-left-light.svg';
+
+GoBackButton.propTypes = {
+    backURL: PropTypes.string.isRequired
+};
 
 export default function GoBackButton( {backURL} ) {
 

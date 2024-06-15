@@ -1,8 +1,25 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import locationIcon from '../images/location-dot-light.svg';
 import buildingIcon from '../images/building-light.svg';
 import linkIcon from '../images/link-light.svg';
 import xIcon from '../images/x-twitter-light.svg';
+
+GitHubUserInfo.propTypes = {
+    Data: PropTypes.shape({
+        avatar_url: PropTypes.string,
+        login: PropTypes.string,
+        name: PropTypes.string,
+        bio: PropTypes.string,
+        public_repos: PropTypes.number,
+        followers: PropTypes.number,
+        following: PropTypes.number,
+        location: PropTypes.string,
+        blog: PropTypes.string,
+        twitter_username: PropTypes.string,
+        company: PropTypes.string,
+    }).isRequired
+};
 
 export default function GitHubUserInfo({ Data }) {
 

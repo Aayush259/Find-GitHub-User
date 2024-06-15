@@ -43,6 +43,7 @@ export default function Search() {
                     type='text' 
                     id='searchInput' 
                     ref={inputRef} 
+                    aria-label="Enter GitHub username"
                     className='
                         bg-white text-slate-950
                         w-4/5 h-5 p-5

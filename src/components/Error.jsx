@@ -1,6 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function Error() {
+Error.propTypes = {
+    retry: PropTypes.func.isRequired
+};
+
+export default function Error({ retry }) {
 
     return (
         <div className='
@@ -11,6 +16,15 @@ export default function Error() {
             text-2xl'
         >
             <p className='mt-40'>Something went wrong 😬</p>
+            <button 
+                onClick={retry}
+                className='
+                    mt-4 py-1 px-4
+                    rounded-md text-xl
+                    bg-sky-800 hover:bg-sky-600 active:bg-sky-400'
+            >
+                Retry
+            </button>
         </div>
     );
 };
