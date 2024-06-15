@@ -51,10 +51,10 @@ export default function DisplayUserInfo() {
 
         // If Data value is not null, then display Data.
         if (Data) {
-            if (Data === 'error') {
-                setReturnValue(<Error />)
-            } else if (Data['message']) {
+            if (Data['message']) {
                 setReturnValue(<UserNotFound />);
+            } else if (Data === 'error') {
+                setReturnValue(<Error />)
             } else {
                 setReturnValue(<GitHubUserInfo Data={Data} />);
             }
