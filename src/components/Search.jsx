@@ -19,9 +19,8 @@ export default function Search() {
     return (
         <div 
             className='
-                flex flex-col mb-4 p-1
-                max-w-4xl w-[95%] min-h-[80vh]
-                mx-auto mt-8
+                flex flex-col mb-4 p-1 mx-auto mt-1
+                max-w-4xl w-[95%] min-h-[75vh]
                 bg-slate-800
                 rounded-2xl'
         >

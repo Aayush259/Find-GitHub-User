@@ -6,7 +6,7 @@ export default function UserNotFound() {
     return (
         <>
         <div className='
-            max-w-4xl w-[95%] min-h-[80vh] mb-4
+            max-w-4xl w-[95%] min-h-[65vh] mb-4
             flex flex-col items-center
             bg-slate-800
             rounded-b-2xl'
