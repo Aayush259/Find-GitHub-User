@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import searchIcon from '../images/search-light.svg';
-import Advice from './Advice';
+import historyIcon from '../images/clock-rotate-left-light.svg';
+import Advice from './Advice.jsx';
 
 export default function Search() {
 
@@ -24,11 +25,20 @@ export default function Search() {
                 bg-slate-800
                 rounded-2xl'
         >
+            <div className='m-4 mb-0 ml-auto'>
+                <button className='
+                    p-[10.5px] rounded
+                    focus:outline-sky-400 focus:outline-4 focus:outline
+                    hover:bg-sky-700'
+                >
+                    <img src={historyIcon} alt='history' width={20} />
+                </button>
+            </div>
             <label 
                 htmlFor='searchInput' 
                 className='
                     text-lg tracking-wide 
-                    m-4 ml-6'
+                    m-4 mt-0 ml-6'
             >
                 Enter GitHub username:
             </label>
