@@ -31,7 +31,8 @@ export default function GoBackButton( {backURL} ) {
                     py-1 px-4
                     rounded-lg
                     hover:bg-sky-600
-                    active:bg-sky-400'
+                    active:bg-sky-400
+                    focus:outline-sky-400 focus:outline-4 focus:outline'
             >
                 <img src={arrowLeft} alt='Go back' width={30} />
             </button>

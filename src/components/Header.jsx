@@ -17,7 +17,14 @@ export default function Header() {
                 DevFinder
             </h1>
 
-            <a className='cursor-pointer' href='https://github.com/Aayush259' target='_blank'>
+            <a
+                className='
+                    cursor-pointer
+                    rounded-full
+                    focus:outline-sky-400 focus:outline-4 focus:outline' 
+                href='https://github.com/Aayush259' 
+                target='_blank'
+            >
                 <img 
                     src='https://avatars.githubusercontent.com/u/159794430?v=4' 
                     alt='Aayush' 
