@@ -17,6 +17,10 @@ export default function Search() {
         }
     };
 
+    const handleHistoryBtnClick = () => {
+        navigate(`/Find-GitHub-User/history`);
+    }
+
     return (
         <div 
             className='
@@ -30,6 +34,7 @@ export default function Search() {
                     p-[10.5px] rounded
                     focus:outline-sky-400 focus:outline-4 focus:outline
                     hover:bg-sky-700'
+                    onClick={handleHistoryBtnClick}
                 >
                     <img src={historyIcon} alt='history' width={20} />
                 </button>
