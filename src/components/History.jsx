@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { HistoryContext } from '../historyContext/HistoryContext.jsx';
+import GoBackButton from './GoBackButton.jsx';
 
 export default function History() {
 
@@ -17,7 +18,7 @@ export default function History() {
         const year = date.getFullYear().toString();
 
         return `${day}-${month}-${year}`;
-    }
+    };
 
     // This function deletes the history using its id.
     const handleRemoveHistoryBtnClick = (id) => {
@@ -26,29 +27,33 @@ export default function History() {
     };
 
     return (
+        <>
+        <GoBackButton backURL={'/Find-GitHub-User/'} />
         <div className='
-            flex flex-col items-center mb-4 p-2 pt-4 mx-auto mt-1
-            max-w-4xl w-[95%] min-h-[75vh]
+            flex flex-col items-center mb-4 p-2 pt-4 mx-auto
+            max-w-4xl w-[95%] h-[65vh]
+            overflow-y-auto
             bg-slate-800
-            rounded-2xl'
+            rounded-b-2xl'
         >
             {
                 userHistory.length > 0 ?
                 userHistory.map((history) => <div
                     key={history.id}
                     className='
-                        text-lg w-full flex justify-between
-                        border-b border-slate-500 p-3'
+                        text-sm w-full flex justify-between items-center
+                        border-b border-slate-500 p-1
+                        md:text-lg md:p-3'
                 >
                     <p className='w-full'><span className=''>{formatDate(history['id'])}</span><span className='pl-7'>{history['name']}</span></p>
                     <button 
                         className='
-                            hover:opacity-80'
+                            hover:opacity-80 hover:bg-slate-900 p-2 rounded'
                         onClick={() => {
                             handleRemoveHistoryBtnClick(history.id);
                         }}
                     >
-                        <img src='https://raw.githubusercontent.com/Aayush259/Dictionary/c4256ba868a07d677bcc25ff861a58f8606969d8/src/images/xmark-light.svg' alt='Remove item' width={20} />
+                        <img src='https://raw.githubusercontent.com/Aayush259/Dictionary/c4256ba868a07d677bcc25ff861a58f8606969d8/src/images/xmark-light.svg' alt='Remove item' width={15} />
                     </button>
                 </div>) :
                 <span 
@@ -59,5 +64,6 @@ export default function History() {
                 </span>
             }
         </div>
+        </>
     );
 };
