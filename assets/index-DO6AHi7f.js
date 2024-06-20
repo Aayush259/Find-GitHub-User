@@ -155,6 +155,6 @@ Error generating stack: `+o.message+`
             rounded-b-2xl`,children:e.length>0?e.map(l=>C.jsxs("div",{className:`
                         text-sm w-full flex justify-between items-center
                         border-b border-slate-500 p-1
-                        md:text-lg md:p-3`,children:[C.jsxs("p",{className:"w-full",children:[C.jsx("span",{className:"",children:n(l.id)}),C.jsx("span",{className:"pl-7",children:l.name})]}),C.jsx("button",{className:`
+                        md:text-lg md:p-3`,children:[C.jsxs("p",{className:"w-full",children:[C.jsx("span",{className:"",children:n(l.id)}),C.jsx("span",{className:"pl-4 md:pl-7",children:l.name})]}),C.jsx("button",{className:`
                             hover:opacity-80 hover:bg-slate-900 p-2 rounded`,onClick:()=>{r(l.id)},children:C.jsx("img",{src:"https://raw.githubusercontent.com/Aayush259/Dictionary/c4256ba868a07d677bcc25ff861a58f8606969d8/src/images/xmark-light.svg",alt:"Remove item",width:15})})]},l.id)):C.jsx("span",{className:`
                         text-2xl block m-auto`,children:"Your search history will appear here. 😊"})})]})}const kv=Qm(pu(C.jsxs(Lr,{path:"/Find-GitHub-User/",element:C.jsx(lv,{}),children:[C.jsx(Lr,{path:"/Find-GitHub-User/",element:C.jsx(av,{})}),C.jsx(Lr,{path:"/Find-GitHub-User/username/:username",element:C.jsx(Sv,{})}),C.jsx(Lr,{path:"/Find-GitHub-User/history",element:C.jsx(Ev,{})})]})));vi.createRoot(document.getElementById("root")).render(C.jsx(wu.StrictMode,{children:C.jsx(ev,{router:kv})}));
