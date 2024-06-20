@@ -1,16 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import Loader from './Loader.jsx';
+import React, { useContext } from 'react';
+import { HistoryContext } from '../historyContext/HistoryContext.jsx';
 
 export default function History() {
 
-    // State for userHistory.
-    const [userHistory, setUserHistory] = useState(null);
-
-    // Getting history from local storage.
-    useEffect(() => {
-        const history = JSON.parse(localStorage.getItem('history')) || [{id: null, name: 'Your search history will appear here. 😊'}];
-        setUserHistory(history);
-    }, []);
+    // Getting history from context.
+    const { userHistory } = useContext(HistoryContext);
 
     // This function returns the date in the format day-month-year.
     const formatDate = (milliseconds) => {
@@ -27,21 +21,30 @@ export default function History() {
 
     return (
         <div className='
-            flex flex-col items-center mb-4 p-2 mx-auto mt-1
+            flex flex-col items-center mb-4 p-2 pt-4 mx-auto mt-1
             max-w-4xl w-[95%] min-h-[75vh]
             bg-slate-800
             rounded-2xl'
         >
             {
-                userHistory ?
-                userHistory.map((history) => <p
+                userHistory.length > 0 ?
+                userHistory.map((history) => <div
                     key={history.id}
                     className='
-                        text-lg'
+                        text-lg w-full flex justify-between
+                        border-b border-slate-500 p-3'
                 >
-                    <span>{formatDate(history['id'])}</span><span>{history['name']}</span>
-                </p>) :
-                <Loader />
+                    <p className='w-full'><span className=''>{formatDate(history['id'])}</span><span className='pl-7'>{history['name']}</span></p>
+                    <button className='hover:opacity-80'>
+                        <img src='https://raw.githubusercontent.com/Aayush259/Dictionary/c4256ba868a07d677bcc25ff861a58f8606969d8/src/images/xmark-light.svg' alt='Remove item' width={20} />
+                    </button>
+                </div>) :
+                <span 
+                    className='
+                        text-2xl block m-auto'
+                >
+                    Your search history will appear here. 😊
+                </span>
             }
         </div>
     );

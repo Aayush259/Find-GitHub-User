@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { HistoryContext } from '../historyContext/HistoryContext.jsx';
 import locationIcon from '../images/location-dot-light.svg';
 import buildingIcon from '../images/building-light.svg';
 import linkIcon from '../images/link-light.svg';
@@ -22,6 +23,14 @@ GitHubUserInfo.propTypes = {
 };
 
 export default function GitHubUserInfo({ Data }) {
+
+    // Getting setUserHistory function from context.
+    const {setUserHistory} = useContext(HistoryContext);
+
+    // Updating userHistory.
+    useEffect(() => {
+        setUserHistory(prevHistory => [{id: Date.now(), name: Data['login']}, ...prevHistory]);
+    }, []);
 
     return (
         <>
