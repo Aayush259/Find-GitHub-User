@@ -4,7 +4,7 @@ import { HistoryContext } from '../historyContext/HistoryContext.jsx';
 export default function History() {
 
     // Getting history from context.
-    const { userHistory } = useContext(HistoryContext);
+    const { userHistory, setUserHistory } = useContext(HistoryContext);
 
     // This function returns the date in the format day-month-year.
     const formatDate = (milliseconds) => {
@@ -18,6 +18,12 @@ export default function History() {
 
         return `${day}-${month}-${year}`;
     }
+
+    // This function deletes the history using its id.
+    const handleRemoveHistoryBtnClick = (id) => {
+        const updatedHistory = userHistory.filter((history) => history.id !== id);
+        setUserHistory(updatedHistory);
+    };
 
     return (
         <div className='
@@ -35,7 +41,13 @@ export default function History() {
                         border-b border-slate-500 p-3'
                 >
                     <p className='w-full'><span className=''>{formatDate(history['id'])}</span><span className='pl-7'>{history['name']}</span></p>
-                    <button className='hover:opacity-80'>
+                    <button 
+                        className='
+                            hover:opacity-80'
+                        onClick={() => {
+                            handleRemoveHistoryBtnClick(history.id);
+                        }}
+                    >
                         <img src='https://raw.githubusercontent.com/Aayush259/Dictionary/c4256ba868a07d677bcc25ff861a58f8606969d8/src/images/xmark-light.svg' alt='Remove item' width={20} />
                     </button>
                 </div>) :
