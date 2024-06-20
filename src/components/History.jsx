@@ -45,7 +45,7 @@ export default function History() {
                         border-b border-slate-500 p-1
                         md:text-lg md:p-3'
                 >
-                    <p className='w-full'><span className=''>{formatDate(history['id'])}</span><span className='pl-7'>{history['name']}</span></p>
+                    <p className='w-full'><span className=''>{formatDate(history['id'])}</span><span className='pl-4 md:pl-7'>{history['name']}</span></p>
                     <button 
                         className='
                             hover:opacity-80 hover:bg-slate-900 p-2 rounded'
