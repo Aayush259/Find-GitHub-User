@@ -158,9 +158,9 @@ Error generating stack: `+o.message+`
                         border-b border-slate-500 p-1
                         md:text-lg md:p-3`,children:[k.jsxs("p",{className:"w-full",children:[k.jsx("span",{className:"",children:n(o.id)}),k.jsx("span",{className:"pl-4 md:pl-7",children:o.name})]}),k.jsx("button",{className:`
                             hover:opacity-80 hover:bg-slate-900 p-2 rounded`,onClick:()=>{r(o.id)},children:k.jsx("img",{src:"https://raw.githubusercontent.com/Aayush259/Dictionary/c4256ba868a07d677bcc25ff861a58f8606969d8/src/images/xmark-light.svg",alt:"Remove item",width:15})})]},o.id)):k.jsx("span",{className:`
-                        text-2xl block m-auto`,children:"Your search history will appear here. 😊"}),k.jsx("button",{className:`
-                    sticky bottom-4 ml-auto mr-4
-                    bg-sky-800 py-1 px-2 rounded-md
-                    hover:bg-sky-600
-                    active:bg-sky-400
-                    focus:outline-sky-400 focus:outline-4 focus:outline`,onClick:l,children:"Clear All"})]})]})}const kv=Qm(pu(k.jsxs(Lr,{path:"/Find-GitHub-User/",element:k.jsx(lv,{}),children:[k.jsx(Lr,{path:"/Find-GitHub-User/",element:k.jsx(av,{})}),k.jsx(Lr,{path:"/Find-GitHub-User/username/:username",element:k.jsx(Sv,{})}),k.jsx(Lr,{path:"/Find-GitHub-User/history",element:k.jsx(Ev,{})})]})));vi.createRoot(document.getElementById("root")).render(k.jsx(wu.StrictMode,{children:k.jsx(ev,{router:kv})}));
+                        text-2xl block m-auto`,children:"Your search history will appear here. 😊"}),e.length>0&&k.jsx("button",{className:`
+                        sticky bottom-4 ml-auto mr-4 mt-auto
+                        bg-sky-800 py-1 px-2 rounded-md
+                        hover:bg-sky-600
+                        active:bg-sky-400
+                        focus:outline-sky-400 focus:outline-4 focus:outline`,onClick:l,children:"Clear All"})]})]})}const kv=Qm(pu(k.jsxs(Lr,{path:"/Find-GitHub-User/",element:k.jsx(lv,{}),children:[k.jsx(Lr,{path:"/Find-GitHub-User/",element:k.jsx(av,{})}),k.jsx(Lr,{path:"/Find-GitHub-User/username/:username",element:k.jsx(Sv,{})}),k.jsx(Lr,{path:"/Find-GitHub-User/history",element:k.jsx(Ev,{})})]})));vi.createRoot(document.getElementById("root")).render(k.jsx(wu.StrictMode,{children:k.jsx(ev,{router:kv})}));
