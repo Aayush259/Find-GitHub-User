@@ -26,6 +26,11 @@ export default function History() {
         setUserHistory(updatedHistory);
     };
 
+    // This function clears the complete history.
+    const clearHistory = () => {
+        setUserHistory([]);
+    }
+
     return (
         <>
         <GoBackButton backURL={'/Find-GitHub-User/'} />
@@ -71,6 +76,7 @@ export default function History() {
                     hover:bg-sky-600
                     active:bg-sky-400
                     focus:outline-sky-400 focus:outline-4 focus:outline'
+                onClick={clearHistory}
             >
                 Clear All
             </button>
