@@ -7,6 +7,7 @@ export default function App() {
 
   // State for user history,
   const [userHistory, setUserHistory] = useState([]);
+  const [goBackRoute, setGoBackRoute] = useState('/Find-GitHub-User/');
 
   // Getting history from local storage.
   useEffect(() => {
@@ -21,7 +22,7 @@ export default function App() {
 
   return (
     <div className='bg-black text-white min-h-screen overflow-x-hidden flex flex-col justify-center items-center'>
-      <HistoryContextProvider value={{ userHistory, setUserHistory }}>
+      <HistoryContextProvider value={{ goBackRoute, setGoBackRoute, userHistory, setUserHistory }}>
         <Header />
         <Outlet />
       </HistoryContextProvider>

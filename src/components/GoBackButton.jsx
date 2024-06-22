@@ -1,21 +1,12 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import arrowLeft from '../images/arrow-left-light.svg';
+import { HistoryContext } from '../historyContext/HistoryContext.jsx';
 
-GoBackButton.propTypes = {
-    backURL: PropTypes.string.isRequired
-};
+export default function GoBackButton() {
 
-export default function GoBackButton( {backURL} ) {
-
-    // Getting navigate function from useNavigateHook.
-    const navigate = useNavigate();
-
-    // THis function navigates to the back URL when button is clicked.
-    const handleBackBtnClick = () => {
-        navigate(backURL);
-    };
+    // Getting route for going back when link is clicked.
+    const { goBackRoute } = useContext(HistoryContext);
 
     return (
         <div className='
@@ -23,10 +14,10 @@ export default function GoBackButton( {backURL} ) {
             bg-slate-800
             rounded-t-2xl'
         >
-            <button
-                type='button'
-                onClick={handleBackBtnClick}
+            <Link
+                to={goBackRoute}
                 className='
+                    block w-fit
                     bg-sky-800
                     py-1 px-4
                     rounded-lg
@@ -35,7 +26,7 @@ export default function GoBackButton( {backURL} ) {
                     focus:outline-sky-400 focus:outline-4 focus:outline'
             >
                 <img src={arrowLeft} alt='Go back' width={30} />
-            </button>
+            </Link>
         </div>
     );
 };

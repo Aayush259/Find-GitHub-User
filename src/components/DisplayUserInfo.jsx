@@ -68,7 +68,7 @@ export default function DisplayUserInfo() {
 
     return (
         <>
-        <GoBackButton backURL={'/Find-GitHub-User/'} />
+        <GoBackButton />
         {returnValue}
         </>
     );

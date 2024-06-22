@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { HistoryContext } from '../historyContext/HistoryContext.jsx';
 import GoBackButton from './GoBackButton.jsx';
 import { Link } from 'react-router-dom';
@@ -6,7 +6,12 @@ import { Link } from 'react-router-dom';
 export default function History() {
 
     // Getting history from context.
-    const { userHistory, setUserHistory } = useContext(HistoryContext);
+    const { userHistory, setUserHistory, setGoBackRoute } = useContext(HistoryContext);
+
+    // Set the go back route to home route on this component render.
+    useEffect(() => {
+        setGoBackRoute('/Find-GitHub-User/');
+    }, []);
 
     // This function returns the date in the format day-month-year.
     const formatDate = (milliseconds) => {
@@ -54,6 +59,7 @@ export default function History() {
                 >
                     <Link
                         to={`/Find-GitHub-User/username/${history['name']}`}
+                        onClick={() => {setGoBackRoute(`/Find-GitHub-User/history`)}}
                     >
                         <p className='w-full'><span className=''>{formatDate(history['id'])}</span><span className='pl-4 md:pl-7'>{history['name']}</span></p>
                     </Link>
