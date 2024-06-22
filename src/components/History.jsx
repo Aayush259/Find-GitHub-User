@@ -32,6 +32,7 @@ export default function History() {
         <div className='
             flex flex-col items-center mb-4 p-2 pt-4 mx-auto
             max-w-4xl w-[95%] h-[65vh]
+            relative
             overflow-y-auto
             bg-slate-800
             rounded-b-2xl'
@@ -63,6 +64,16 @@ export default function History() {
                     Your search history will appear here. 😊
                 </span>
             }
+            <button
+                className='
+                    sticky bottom-4 ml-auto mr-4
+                    bg-sky-800 py-1 px-2 rounded-md
+                    hover:bg-sky-600
+                    active:bg-sky-400
+                    focus:outline-sky-400 focus:outline-4 focus:outline'
+            >
+                Clear All
+            </button>
         </div>
         </>
     );
