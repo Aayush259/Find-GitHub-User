@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { HistoryContext } from '../historyContext/HistoryContext.jsx';
 import GoBackButton from './GoBackButton.jsx';
+import { Link } from 'react-router-dom';
 
 export default function History() {
 
@@ -51,7 +52,11 @@ export default function History() {
                         border-b border-slate-500 p-1
                         md:text-lg md:p-3'
                 >
-                    <p className='w-full'><span className=''>{formatDate(history['id'])}</span><span className='pl-4 md:pl-7'>{history['name']}</span></p>
+                    <Link
+                        to={`/Find-GitHub-User/username/${history['name']}`}
+                    >
+                        <p className='w-full'><span className=''>{formatDate(history['id'])}</span><span className='pl-4 md:pl-7'>{history['name']}</span></p>
+                    </Link>
                     <button 
                         className='
                             hover:opacity-80 hover:bg-slate-900 p-2 rounded'
