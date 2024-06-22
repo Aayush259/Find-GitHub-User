@@ -69,17 +69,19 @@ export default function History() {
                     Your search history will appear here. 😊
                 </span>
             }
-            <button
-                className='
-                    sticky bottom-4 ml-auto mr-4
-                    bg-sky-800 py-1 px-2 rounded-md
-                    hover:bg-sky-600
-                    active:bg-sky-400
-                    focus:outline-sky-400 focus:outline-4 focus:outline'
-                onClick={clearHistory}
-            >
-                Clear All
-            </button>
+            {
+                userHistory.length > 0 && (<button
+                    className='
+                        sticky bottom-4 ml-auto mr-4 mt-auto
+                        bg-sky-800 py-1 px-2 rounded-md
+                        hover:bg-sky-600
+                        active:bg-sky-400
+                        focus:outline-sky-400 focus:outline-4 focus:outline'
+                    onClick={clearHistory}
+                >
+                    Clear All
+                </button>)
+            }
         </div>
         </>
     );
