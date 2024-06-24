@@ -83,7 +83,7 @@ export default function History() {
             {
                 userHistory.length > 0 && (<button
                     className='
-                        sticky bottom-4 ml-auto mr-4 mt-auto
+                        sticky z-10 bottom-4 ml-auto mr-4 mt-auto
                         bg-sky-800 py-1 px-2 rounded-md
                         hover:bg-sky-600
                         active:bg-sky-400
