@@ -160,7 +160,7 @@ Error generating stack: `+o.message+`
                         md:text-lg md:p-3`,children:[C.jsx(Od,{to:`/Find-GitHub-User/username/${i.name}`,onClick:()=>{n("/Find-GitHub-User/history")},children:C.jsxs("p",{className:"w-full",children:[C.jsx("span",{className:"",children:r(i.id)}),C.jsx("span",{className:"pl-4 md:pl-7",children:i.name})]})}),C.jsx("button",{className:`
                             hover:opacity-80 hover:bg-slate-900 p-2 rounded`,onClick:()=>{l(i.id)},children:C.jsx("img",{src:"https://raw.githubusercontent.com/Aayush259/Dictionary/c4256ba868a07d677bcc25ff861a58f8606969d8/src/images/xmark-light.svg",alt:"Remove item",width:15})})]},i.id)):C.jsx("span",{className:`
                         text-2xl block m-auto`,children:"Your search history will appear here. 😊"}),e.length>0&&C.jsx("button",{className:`
-                        sticky bottom-4 ml-auto mr-4 mt-auto
+                        sticky z-10 bottom-4 ml-auto mr-4 mt-auto
                         bg-sky-800 py-1 px-2 rounded-md
                         hover:bg-sky-600
                         active:bg-sky-400
