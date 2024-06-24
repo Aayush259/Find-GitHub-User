@@ -53,6 +53,7 @@ DevFinder is a React application that allows users to search for GitHub users by
 - **Header.jsx:** Displays the application header with the title and link to my GitHub profile 😉.
 - **Loader.jsx:** A loading component displayed while data is being fetched.
 - **Advice.jsx:** Fetches and displays random advice from the Advice Slip API.
+- **History.jsx:** Display history and allows users to delete them on single click. Uses local storage for storing history.
 
 ## Routing
 
