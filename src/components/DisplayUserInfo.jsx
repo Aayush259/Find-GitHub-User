@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import GitHubUserInfo from './GithubUserInfo.jsx';
 import Loader from './Loader.jsx';
@@ -21,7 +21,7 @@ export default function DisplayUserInfo() {
     const [returnValue, setReturnValue] = useState(<Loader />);
 
     // This function fetches the github user data and update the Data state.
-    const fetchGithubUserData = () => {
+    const fetchGithubUserData = useCallback(() => {
 
         // Initialize abort controller.
         const controller = new AbortController();
@@ -37,7 +37,7 @@ export default function DisplayUserInfo() {
         .catch(err => {
             console.log('Error:', err);
             if (err.name === 'AbortError') return;  // Ignore abort errors.
-            setData('error')
+            setData('error');
         });
 
         // Cleanup and abort fetch if component unmounts.
@@ -46,7 +46,7 @@ export default function DisplayUserInfo() {
                 controllerRef.current.abort();
             }
         };
-    };
+    }, [username]);
 
     useEffect(() => {
         return fetchGithubUserData();

@@ -6,7 +6,8 @@ export default function Advice() {
     // State for keeping advice.
     const [advice, setAdvice] = useState(null);
 
-    useEffect(() => {
+    // This function fetch random advice from  advice slip API.
+    const getAdvice = () => {
 
         // Fetching random advice.
         fetch('https://api.adviceslip.com/advice')
@@ -18,8 +19,9 @@ export default function Advice() {
         return () => {
             setAdvice(null);
         };
+    };
 
-    }, []);
+    useEffect(getAdvice, []);
 
     return (
         <div className='
