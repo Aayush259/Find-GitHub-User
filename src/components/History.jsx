@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { HistoryContext } from '../historyContext/HistoryContext.jsx';
 import GoBackButton from './GoBackButton.jsx';
-import { Link } from 'react-router-dom';
 
 export default function History() {
 

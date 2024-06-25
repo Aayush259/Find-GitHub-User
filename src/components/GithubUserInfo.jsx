@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { HistoryContext } from '../historyContext/HistoryContext.jsx';
 import locationIcon from '../images/location-dot-light.svg';
 import buildingIcon from '../images/building-light.svg';
 import linkIcon from '../images/link-light.svg';
 import xIcon from '../images/x-twitter-light.svg';
+import { HistoryContext } from '../historyContext/HistoryContext.jsx';
 
 GitHubUserInfo.propTypes = {
     Data: PropTypes.shape({

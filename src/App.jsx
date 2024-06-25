@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
-import { HistoryContextProvider } from './historyContext/HistoryContext.jsx'
+import { HistoryContextProvider } from './historyContext/HistoryContext.jsx';
 import Header from './components/Header.jsx';
 
 export default function App() {

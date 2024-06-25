@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import GitHubUserInfo from './GithubUserInfo';
+import GitHubUserInfo from './GithubUserInfo.jsx';
 import Loader from './Loader.jsx';
 import UserNotFound from './UserNotFound.jsx';
 import GoBackButton from './GoBackButton.jsx';

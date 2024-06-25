@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// Props type checking.
 Error.propTypes = {
     retry: PropTypes.func.isRequired
 };
