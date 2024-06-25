@@ -28,7 +28,7 @@ export default function Advice() {
         >
             {advice ? 
             <>
-            <p className='mt-32'>
+            <p className='mt-24'>
                 <span className='text-4xl'>&ldquo;</span> {advice['slip']['advice']} <span className='text-4xl'>&rdquo;</span>
             </p>
             </> :

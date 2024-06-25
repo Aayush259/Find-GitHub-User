@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { HistoryContextProvider } from './historyContext/HistoryContext.jsx';
 import Header from './components/Header.jsx';
+import Loader from './components/Loader.jsx';
 
 export default function App() {
 
@@ -24,7 +25,11 @@ export default function App() {
     <div className='bg-black text-white min-h-screen overflow-x-hidden flex flex-col justify-center items-center'>
       <HistoryContextProvider value={{ goBackRoute, setGoBackRoute, userHistory, setUserHistory }}>
         <Header />
-        <Outlet />
+        <div className='flex flex-col items-center w-full min-h-[494px]'>
+          <Suspense fallback={<Loader />}>
+            <Outlet />
+          </Suspense>
+        </div>
       </HistoryContextProvider>
     </div>
   );
