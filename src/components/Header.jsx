@@ -4,7 +4,7 @@ export default function Header() {
 
     return (
         <div className='
-            my-4 mt-0 mx-auto
+            my-4 mt-5 mx-auto
             max-w-4xl w-[95%]
             p-4
             flex justify-between items-center
